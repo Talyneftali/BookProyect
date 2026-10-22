@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class ReportController extends BaseController{
     public function __construct(protected BookService $BookService)    {}
-
-    public function listReport(){
+    public function listReport(Request $request){
         $types = $this -> BookService -> listReport();
         return $this -> success($types, 'Lista de tipos de reportes');
     }
